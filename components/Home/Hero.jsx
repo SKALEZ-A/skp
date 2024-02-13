@@ -1,297 +1,300 @@
+"use client";
 import React from "react";
 import { useState } from "react";
-import Header from "./Navbar";
+
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { ConnectWallet } from "@thirdweb-dev/react";
+import Footer from "./Footer";
 
-// react icons
+import node_logo from "@/public/images/node_logo.png";
+import wallet from "@/public/images/walletconnect.jpeg";
+import blockchain from "@/public/images/blockchain4.png";
+import hero_img from "@/public/images/hero_img.png";
+import Modal from "../Modal";
+import rainbow from "@/public/images/rainbow.jpeg";
+import trust from "@/public/images/trust_wallet.png";
+import walleth from "@/public/images/walleth.jpeg";
+import metamask from "@/public/images/metamask.png";
+import phantom from "../../public/images/phantom.jpeg";
+import coinbase from "@/public/images/coinbase.png";
+import safepal from "@/public/images/safepal.jpeg";
+import ledger from "@/public/images/ledger.webp";
+import terra from "@/public/images/terra.png";
+import fortmatic from "@/public/images/fortmatic.png";
+
+// // react icons
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
 import { DiGoogleDrive } from "react-icons/di";
 
 const Hero = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const walletData = [
+    { name: "Coinbase", image: coinbase },
+    { name: "Phantom", image: phantom },
+    { name: "Trust Wallet", image: trust },
+    { name: "WalletConnect", image: wallet },
+    { name: "Safepal", image: safepal },
+    { name: "Ledger", image: ledger },
+    { name: "Terra", image: terra },
+    { name: "Fortmatic", image: fortmatic },
+  ];
+
+  const toggleModal = () => {
+    // Show the modal only if scrolled to the bottom
+
+    setShowModal(!showModal);
+  };
+
+  const handleCloseModal = () => {
+    // Reset the state when the modal is closed
+
+    setShowModal(false);
+  };
   return (
     <>
-      <Head>
-        <title>Portfolio Tracker for the Arbitrum Blockchain</title>
-        <meta
-          name="Arbitrum Portfolio Tracker"
-          content="Portfolio Tracker for the Arbitrum Blockchain"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/horizons.ico" />
-      </Head>
-      <nav className="relative container mx-auto p-6">
-        <div className="flex items-center justify-between">
-          <div className="pt-2 ">
-            <Image
-              src="/HorizonWithLogo.png"
-              alt="horizon Logo"
-              width={150}
-              height={150}
-            />
-          </div>
-
-          {/* menu items  */}
-          <div className="flex justify-end md:hidden ">
-            <div className="block border md:hidden p-3 px-6 pt-2 text-white bg-[#0baab5] rounded-full baseline">
-              <Link href="/app/Portfolio">Launch Dapp</Link>
-            </div>
-          </div>
-          <div className="hidden md:flex space-x-6 text-gray-300 items-center ">
-            <a href="#" className="hover:bg-[#0baab5]">
-              Home
-            </a>
-            <a href="#" className="hover:bg-[#0baab5]">
-              About
-            </a>
-            <a href="#" className="hover:bg-[#0baab5]">
-              Faqs
-            </a>
-            <a href="#" className="hover:bg-[#0baab5]">
-              Docs
-            </a>
-            <div className="hidden border md:block p-3 px-6 pt-2 text-white bg-[#0baab5] rounded-full baseline ">
-              <a href="#" className="">
-                <AiFillGithub className="text-xl text-white" />
-              </a>
+      <div>
+        <Head>
+          <title>Portfolio Tracker for the Arbitrum Blockchain</title>
+          <meta
+            name="Arbitrum Portfolio Tracker"
+            content="Portfolio Tracker for the Arbitrum Blockchain"
+          />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/horizons.ico" />
+        </Head>
+        <nav className="relative container mx-auto p-6">
+          <div className="flex items-center justify-between">
+            <div className="pt-2 ">
+              <Image
+                src={node_logo}
+                alt="horizon Logo"
+                width={50}
+                height={50}
+              />
             </div>
 
-            {/* hamburger menu */}
+            {/* menu items  */}
+            <div className="flex justify-end  ">
+              <div
+                className="block border  p-3 px-6 pt-2 text-white bg-[#0baab5] rounded-full baseline "
+                onClick={toggleModal}
+              >
+                <button>Connect</button>
+              </div>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
 
       {/* Hero Section  */}
       <section className="">
-        <div className="container flex flex-col-reverse md:flex-row items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0 ">
+        <div className="container flex flex-col md:flex-row items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0 ">
           {/* left item  */}
-          <div className="flex flex-col md:mb-32 mb-5 space-y-12 md:w-1/2">
-            <h1 className="max-w-md text-3xl text-center md:text-4xl md:text-left text-gray-300">
+          <div className="flex flex-col space-y-12 md:w-1/2">
+            <h1 className="max-w-md text-3xl text-center md:text-4xl md:text-left text-gray-200">
               An Intuitive token wallet tracker
             </h1>
-            <p className="max-w-sm text-center md:text-left text-gray-400">
+            <p className="max-w-sm text-center md:text-left text-gray-300">
               Effortlessly oversee your DeFi and NFT portfolios spanning various
               blockchain networks, granting you a panoramic view of your tokens
               and entire asset collection through the innovative lens of
               Horizon.
             </p>
             <div className="flex justify-center md:justify-center ">
-              <div className="hidden border md:block p-3 px-6 pt-2 text-white bg-[#0baab5] rounded-full baseline">
-                <Link href="/app/Portfolio">Launch Dapp</Link>
+              <div
+                className="hidden border md:block p-3 px-6 pt-2 text-white bg-[#0baab5] rounded-full baseline"
+                onClick={toggleModal}
+              >
+                <button>Launch Dapp</button>
               </div>
             </div>
           </div>
 
           {/* image  */}
           <div className="md:w-1/2">
-            <Image
-              src="/blockchain3.png"
-              alt="horizon Logo"
-              width={450}
-              height={450}
-            />
+            <Image src={blockchain} alt="horizon Logo" width={400} />
           </div>
         </div>
       </section>
 
       {/* features section  */}
-      <section className="">
-        <div className="container flex flex-col md:flex-row items-center px-6 mx-auto md:mt-2 space-y-0 md:space-y-0 mb-32 ">
-          <div className="md:w-1/2">
-            <Image
-              src="/blockchain4.png"
-              alt="horizon Logo"
-              width={450}
-              height={450}
-            />
+      <section className=" container mt-5 md:mt-16">
+        <div className="px-5 w-auto flex flex-col justify-center items-center">
+          <h1 className="text-white text-3xl md:text-4xl font-semibold p-4 m-auto">
+            What is wallet authenticator{" "}
+          </h1>
+          <div className=" p-4 text-gray-300 text-sm md:text-md leading-8">
+            Wallets authenticator is the cutting-edge AI tool that exposes your
+            transactions, through dapps that not only verifies unsigned
+            transactions but also employs robust measures to prevent
+            front-running. Leveraging the Cosmos SDK technology, our platform
+            ensures secure asset bridging between Layer 1s and Layer 2s,
+            facilitating seamless and trustworthy cross-chain transactions.
+            Experience heightened ease of validation and navigation through
+            transactions on the blockchain involving unstaking and more through
+            innovative solutions.
           </div>
-          {/* left item  */}
-          <div className="flex flex-col mb-32 space-y-12 md:w-1/2 mx-3">
-            <h1 className="max-w-md text-3xl text-center md:text-4xl md:text-left text-gray-300">
-              About{" "}
-              <span className="text-[#0baab5] font-semibold">Horizon</span>
-            </h1>
-            <p className="max-w-sm text-center md:text-left text-gray-400">
-              Horizon stands as a user-friendly Web3 Portfolio & Token Tracker
-              platform across various Chains, simplifying the management and
-              analysis of your cryptocurrency portfolio. Harnessing the
-              advantages of layer 2 technology, Horizon offers instantaneous
-              analytics, transparent transaction records, and effortless
-              compatibility with Ethereum wallets.
-            </p>
-          </div>
-
-          {/* image  */}
+          <Image src={hero_img} width={300} className="pt-5" />
         </div>
       </section>
 
       {/* core features section  */}
-      <section className="features_section" id="features">
+      <section className="features_section " id="features">
         {/* flex container */}
-        <div className="container flex flex-col px-4 mx-auto my-10 space-y-12 md:space-y-0 md:flex-row mx-3">
-          <div className="flex flex-col space-y-2 md:w-1/2">
-            <h2 className="max-w-md text-3xl font-bold text-center text-gray-300 md:text-left">
-              Core Features of{" "}
-              <span className="text-[#0baab5] font-semibold">Horizon</span>
-            </h2>
-            <p className="max-w-sm text-center text-gray-400 p-5">
-              Horizon streamlines portfolio management within the ever-evolving
-              realm of DeFi and blockchain technology. It presents a
-              comprehensive Web3 Portfolio & Token Tracker across various
-              chains, providing users with a seamless and efficient way to
-              monitor and oversee their digital assets.
-            </p>
+
+        <div className="space-y-12  p-8 mb-24 mt-12 mx-4 md:mx-auto sm:max-w-xl md:max-w-5xl lg:max-w-5xl xl:max-w-5xl md:container rounded-xl">
+          <div className={`xl:mt-12 flex flex-col gap-10  pb-6`}>
+            <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-5 md:grid-cols-6">
+              {/* first name */}
+              <div className="sm:col-span-3">
+                <div className="mt-2 hover:border-gray-400 border-gray-600 border rounded-lg">
+                  <button
+                    className="w-full p-3 bg-[#C1CFDA]/5 rounded-lg  text-white"
+                    onClick={toggleModal}
+                  >
+                    Migrator V2
+                  </button>
+                </div>
+              </div>
+              {/* last name */}
+              <div className="sm:col-span-3">
+                <div className="mt-2 hover:border-gray-400 border-gray-600 border rounded-lg">
+                  {" "}
+                  <button
+                    className="w-full p-3 bg-[#C1CFDA]/5 rounded-lg  text-white"
+                    onClick={toggleModal}
+                  >
+                    Rectification
+                  </button>
+                </div>
+              </div>
+
+              {/* email */}
+              <div className="sm:col-span-3">
+                <div className="mt-2 hover:border-gray-400 border-gray-600 border rounded-lg">
+                  {" "}
+                  <button
+                    className="w-full p-3 bg-[#C1CFDA]/5 rounded-lg text-white"
+                    onClick={toggleModal}
+                  >
+                    Staking
+                  </button>
+                </div>
+              </div>
+
+              {/* phone no */}
+              <div className="sm:col-span-3">
+                <div className="mt-2 hover:border-gray-400 border-gray-600 border rounded-lg">
+                  {" "}
+                  <button
+                    className="w-full p-3 bg-[#C1CFDA]/5 rounded-lg  text-white"
+                    onClick={toggleModal}
+                  >
+                    Whitelist
+                  </button>
+                </div>
+              </div>
+              {/* country or recovery type */}
+              <div className="sm:col-span-3">
+                <div className="mt-2 hover:border-gray-400 border-gray-600 border rounded-lg">
+                  {" "}
+                  <button
+                    className="w-full p-3 bg-[#C1CFDA]/5 rounded-lg  text-white"
+                    onClick={toggleModal}
+                  >
+                    Claim Rewards
+                  </button>
+                </div>
+              </div>
+              {/* country or recovery type */}
+              <div className="sm:col-span-3">
+                <div className="mt-2 hover:border-gray-400 border-gray-600 border rounded-lg">
+                  {" "}
+                  <button
+                    className="w-full p-3 bg-[#C1CFDA]/5 rounded-lg  text-white"
+                    onClick={toggleModal}
+                  >
+                    Confirm Txns
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-col space-y-8 md:w-1/2">
-            {/* list item 1 */}
-            <div className="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row  ">
-              {/* heading */}
-              <div className="rounded-l-full bg-[#0baab521] md:bg-transparent">
-                <div className="flex items-center space-x-2 ">
-                  <div className="px-4 py-2 text-white rounded-full md:py-1 bg-[#0baab5]">
-                    01
-                  </div>
-                  <h3 className="text-base font-bold md:mb-4 md:hidden">
-                    Portfolio Management
-                  </h3>
-                </div>
-              </div>
-              <div>
-                <h3 className="hidden mb-4 text-lg font-bold md:block ">
-                  Portfolio Management
-                </h3>
-                <p className="text-gray-400">
-                  Connect your Ethereum wallet to track assets across various
-                  DeFi protocols and tokens on the various chains.
-                </p>
-              </div>
-            </div>
+        </div>
+      </section>
 
-            {/* list item 2 */}
-            <div className="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row  ">
-              {/* heading */}
-              <div className="rounded-l-full bg-[#0baab521] md:bg-transparent">
-                <div className="flex items-center space-x-2 ">
-                  <div className="px-4 py-2 text-white rounded-full md:py-1 bg-[#0baab5]">
-                    02
-                  </div>
-                  <h3 className="text-base font-bold md:mb-4 md:hidden">
-                    Real-time Analytics
-                  </h3>
-                </div>
-              </div>
-              <div>
-                <h3 className="hidden mb-4 text-lg font-bold md:block ">
-                  Real-time Analytics
-                </h3>
-                <p className="text-gray-400">
-                  Get live updates on portfolio value, ROI, and asset allocation
-                  for informed decision-making
-                </p>
-              </div>
+      {/* contributors section  */}
+      <section className="container">
+        <div className="w-auto mx-5 flex justify-center items-center flex-col">
+          <h1 className="text-white text-3xl  font-semibold py-8">
+            Top Code Contributors{" "}
+          </h1>
+          <div className=" flex flex-row gap-5 my-5">
+            <div>
+              <Image src={rainbow} width={80} className="rounded-xl" />
+              <p className="text-white py-3 text-sm">RAINBOW</p>
             </div>
-
-            {/* list item 3 */}
-            <div className="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row  ">
-              {/* heading */}
-              <div className="rounded-l-full bg-[#0baab521] md:bg-transparent">
-                <div className="flex items-center space-x-2 ">
-                  <div className="px-4 py-2 text-white rounded-full md:py-1 bg-[#0baab5]">
-                    03
-                  </div>
-                  <h3 className="text-base font-bold md:mb-4 md:hidden">
-                    Transaction History
-                  </h3>
-                </div>
-              </div>
-              <div>
-                <h3 className="hidden mb-4 text-lg font-bold md:block ">
-                  Transaction History
-                </h3>
-                <p className="text-gray-400">
-                  Easily review and verify all your transactions for
-                  transparency and security.
-                </p>
-              </div>
+            <div className="justify-center items-center flex flex-col">
+              <Image src={trust} width={80} className="rounded-lg " />
+              <p className="text-white py-3 text-sm">TRUST WALLET</p>
             </div>
-
-            {/* list item 4 */}
-            <div className="flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row  ">
-              {/* heading */}
-              <div className="rounded-l-full bg-[#0baab521] md:bg-transparent">
-                <div className="flex items-center space-x-2 ">
-                  <div className="px-4 py-2 text-white rounded-full md:py-1 bg-[#0baab5]">
-                    04
-                  </div>
-                  <h3 className="text-base font-bold md:mb-4 md:hidden">
-                    Different Chain Integration
-                  </h3>
-                </div>
-              </div>
-              <div>
-                <h3 className="hidden mb-4 text-lg font-bold md:block ">
-                  Different Chain Integration
-                </h3>
-                <p className="text-gray-400">
-                  Enjoy fast and cost-effective transactions, thanks to layer 2
-                  solutions
-                </p>
-              </div>
+            <div>
+              <Image src={walleth} width={80} className="rounded-lg" />
+              <p className="text-white py-3 text-sm">WALLETH</p>
+            </div>
+            <div className="">
+              <Image src={metamask} width={80} className="rounded-lg" />
+              <p className="text-white py-3 text-sm">METAMASK</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* footer section  */}
-      <footer>
-        <div className="container flex flex-col-reverse justify-between px-6 pt-10 pb-0 mx-auto space-y-8 md:flex-row md:space-y-0">
-          {/* logo and social links */}
-          <div className="flex flex-col-reverse  items-center justify-between space-y-12 md:flex-row md:space-y-0 md:items-center">
-            <div className="mx-auto my-6 text-center text-white text-sm md:hidden ">
-              Copyright &copy; 2023, All right reserved.
-            </div>
-            <div className="md:px-32">
-              <Image
-                src="/HorizonWithLogo.png"
-                alt="horizon Logo"
-                width={200}
-                height={200}
-              />
-            </div>
-            <div className="flex justify-center space-x-4 ">
-              <a href="#" className="">
-                <AiFillTwitterCircle className="text-xl text-[#0baab5]" />
-              </a>
-              <a href="#" className="">
-                <AiFillGithub className="text-xl text-[#0baab5]" />
-              </a>
-              <a href="#" className="">
-                <DiGoogleDrive className="text-xl text-[#0baab5]" />
-              </a>
-            </div>
-          </div>
-
-          <div className="flex md:hidden justify-around space-x-32 ">
-            <div className="flex flex-col space-y-3 ">
-              <a href="#" className="text-gray-400 hover:text-gray-200">
-                Home
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-200">
-                About
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-200">
-                Faqs
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-200">
-                Docs
-              </a>
+      <Footer />
+      <Modal isVisible={showModal} onClose={handleCloseModal} animation="fade">
+        {/* wallets modal */}
+        <div className="">
+          <div
+            className={`modal left-0 top-0 flex justify-center items-center`}
+          >
+            <div className="shadow-lg rounded modal-content  w-auto">
+              {/* Modal header */}
+              <div className="border-b py-4 px-2 modal-header">
+                <h5 className="modal-title">Connect Wallet</h5>
+              </div>
+              {/* Modal body */}
+              <div className="p-3 modal-body">
+                <p>Connect with one of our available wallet providers.</p>
+                <div className="modal-wallets">
+                  <Link href="/connect">
+                    <Image src={metamask} width={30} alt="" />
+                    Metamask
+                    <span class="inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400">
+                      Popular
+                    </span>
+                  </Link>
+                  {walletData.map((wallet) => (
+                    <Link href="/connect">
+                      <Image src={wallet.image} width={30} height={35} alt="" />
+                      {wallet.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              {/* Modal footer */}
+              <div className="flex justify-end items-center w-full border-t p-3">
+                <button className="bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-white mr-1">
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
+      </Modal>
     </>
   );
 };

@@ -17,11 +17,234 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #101010;
+  /* color: white; */
+}
+.bgr {
+  background-color: hsl(0, 0%, 12%);
+}
+
+.white-glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.19);
+  height: calc(100vh - 120px);
+  min-height: calc(100vh - 120px);
+  max-height: calc(100vh - 120px);
+}
+
+.connect_button button {
+  padding: 15px 20px;
+  background: #0baab5;
+  box-shadow: 0px 4px 10px rgba(76.5, 76.5, 255, 0.2);
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 10px 10px;
+  width: 250px;
+  height: 40px;
+}
+.side-connect button {
+  background: #0baab5 !important;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin-top: 0px;
+}
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  /* Tablet view */
+  .connect_button button {
+    font-size: 13px; /* Adjust font size for tablet view */
+    height: 30px;
+    width: 180px; /* Further reduce height for tablet */
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile view */
+  .connect_button button {
+    width: 180px;
+    padding: 30px 60px; /* Adjust padding for mobile */
+    font-size: 12px; /* Adjust font size for mobile view */
+    height: 25px; /* Smallest height for mobil */
+  }
+}
+
+.css-1309xma {
+  z-index: 99999999999999999999999 !important;
+}
+
+.tx_table td {
+  font-size: 13px;
+  padding-left: 1.3rem !important;
+  padding-right: 1.3rem !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .tx_table td {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
+
+.explore_items svg {
+  height: 1.5em;
+  width: 1.5em;
+}
+.tx_data svg {
+  color: #555555;
+}
+
+.fixed-column {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+.table-cells {
+  min-width: 100px;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* for the pie chart  */
+/* .pie_Chart svg .recharts-layer {
+  display: hidden !important;
+} */
+.modal-content {
+  background-color: rgb(10, 16, 15);
+}
+.modal-content h5 {
+  color: white;
+}
+.modal-content p {
+  color: rgb(131, 131, 131);
+  font-size: 13px;
+}
+.modal-body img {
+  width: 27px;
+  border-radius: 8px;
+  margin: 0px 10px;
+  display: inline;
+}
+.modal-wallets {
+  display: flex;
+  flex-direction: column;
+}
+.modal-wallets a {
+  padding: 10px;
+  margin: 5px;
+  color: white;
+  background-color: rgb(30, 43, 40);
+  border-radius: 10px;
+  font-size: 13px;
+}
+.form_div {
+  background-color: rgb(10, 16, 15);
+}
+.table_div {
+  background-color: rgb(30, 43, 40);
+}
+/* =============== Connect Page =============== */
+.connect-section {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  height: 90vh;
+}
+.connect-section .connect-content {
+  border: 1px solid rgba(128, 128, 128, 0.647);
+  background-color: rgb(10, 16, 15);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+.connect-section .section-container {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.connect-content button {
+  margin-top: 15px;
+}
+
+/* ====================== Connection Page ===================== */
+.connection {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.connection .connection-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+.connection-body .eth-logo p {
+  background-color: lightblue;
+  padding: 20px;
+  color: blue;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.connection-body .tab-content .form-control {
+  background-color: rgb(11, 18, 33);
+  color: rgba(255, 255, 255, 0.789);
+}
+.connection-body .secure {
+  font-size: 15px;
+  display: flex;
+  width: 250px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 10px;
+}
+.secure p {
+  margin: 0;
+  padding: 6px;
+}
+.connection-body .secure img {
+  width: 35px;
+  margin: 0px 10px;
+  border-radius: 50px;
+}
+.tab-pane {
+  width: 400px;
+}
+.import-box {
+  /* background-color: rgb(65, 75, 96); */
+  background-color: rgb(20, 30, 53);
+  border-radius: 10px;
+  padding: 10px;
+}
+.keystore-label {
+  background-color: rgb(11, 18, 33);
+  color: rgb(131, 131, 131);
+}
+
+.connection-body .tab-content .form-control {
+  background-color: rgb(11, 18, 33);
+  color: rgba(255, 255, 255, 0.789);
+}
+
+.tab-pane {
+  width: 400px;
 }
