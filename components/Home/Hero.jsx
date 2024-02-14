@@ -79,7 +79,7 @@ const Hero = () => {
             {/* menu items  */}
             <div className="flex justify-end  ">
               <div
-                className="block border  p-3 px-6 pt-2 text-white bg-[#0baab5] rounded-full baseline "
+                className="hidden border border-gray-400 md:block p-3 px-6 pt-2 text-gray-300 bg-[#0b58b5]  rounded-full baseline"
                 onClick={toggleModal}
               >
                 <button>Connect</button>
@@ -95,17 +95,17 @@ const Hero = () => {
           {/* left item  */}
           <div className="flex flex-col space-y-12 md:w-1/2">
             <h1 className="max-w-md text-3xl text-center md:text-4xl md:text-left text-gray-200">
-              An Intuitive token wallet tracker
+              An Intuitive Tracker for Secure Blockchain Transactions.
             </h1>
             <p className="max-w-sm text-center md:text-left text-gray-300">
-              Effortlessly oversee your DeFi and NFT portfolios spanning various
-              blockchain networks, granting you a panoramic view of your tokens
-              and entire asset collection through the innovative lens of
-              Horizon.
+              Elevate your transactions with out advanced Wallets Authenticator
+              - securing and streamlining blockchain transactions, preventing
+              front-running, and enabling seamless cross-chain asset bridging
+              using Cosmos SDK technology.
             </p>
             <div className="flex justify-center md:justify-center ">
               <div
-                className="hidden border md:block p-3 px-6 pt-2 text-white bg-[#0baab5] rounded-full baseline"
+                className="hidden border border-gray-400 md:block p-3 px-6 pt-2 text-gray-300 bg-[#0b58b5]  rounded-full baseline"
                 onClick={toggleModal}
               >
                 <button>Launch Dapp</button>
@@ -123,19 +123,16 @@ const Hero = () => {
       {/* features section  */}
       <section className=" container mt-5 md:mt-16">
         <div className="px-5 w-auto flex flex-col justify-center items-center">
-          <h1 className="text-white text-3xl md:text-4xl font-semibold p-4 m-auto">
+          <h1 className="text-white text-3xl md:text-4xl p-4 m-auto">
             What is wallet authenticator{" "}
           </h1>
           <div className=" p-4 text-gray-300 text-sm md:text-md leading-8">
-            Wallets authenticator is the cutting-edge AI tool that exposes your
-            transactions, through dapps that not only verifies unsigned
-            transactions but also employs robust measures to prevent
-            front-running. Leveraging the Cosmos SDK technology, our platform
-            ensures secure asset bridging between Layer 1s and Layer 2s,
-            facilitating seamless and trustworthy cross-chain transactions.
-            Experience heightened ease of validation and navigation through
-            transactions on the blockchain involving unstaking and more through
-            innovative solutions.
+            Wallets Authenticator, powered by advanced AI, enhances transaction
+            security within dapps. It verifies unsigned transactions, prevents
+            front running, and utilizes Cosmos SDK for secure cross-chain asset
+            bridging between Later 1s and Layer 2s. Experience streamlined
+            validation and navigation for blockchain transactions, including
+            unstaking, through our innovative solutions.
           </div>
           <Image src={hero_img} width={300} className="pt-5" />
         </div>

