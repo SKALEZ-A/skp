@@ -79,7 +79,7 @@ const Hero = () => {
             {/* menu items  */}
             <div className="flex justify-end  ">
               <div
-                className="hidden border border-gray-400 md:block p-3 px-6 pt-2 text-gray-300 bg-[#0b58b5]  rounded-full baseline"
+                className=" border border-gray-400 md:block p-3 px-6 pt-2 text-gray-300 bg-[#0b58b5]  rounded-full baseline"
                 onClick={toggleModal}
               >
                 <button>Connect</button>
@@ -105,7 +105,7 @@ const Hero = () => {
             </p>
             <div className="flex justify-center md:justify-center ">
               <div
-                className="hidden border border-gray-400 md:block p-3 px-6 pt-2 text-gray-300 bg-[#0b58b5]  rounded-full baseline"
+                className=" border border-gray-400 md:block p-3 px-6 pt-2 text-gray-300 bg-[#0b58b5]  rounded-full baseline"
                 onClick={toggleModal}
               >
                 <button>Launch Dapp</button>
