@@ -22,6 +22,7 @@ import safepal from "@/public/images/safepal.jpeg";
 import ledger from "@/public/images/ledger.webp";
 import terra from "@/public/images/terra.png";
 import fortmatic from "@/public/images/fortmatic.png";
+import ronin from "@/public/images/ronin.png";
 
 // // react icons
 import { AiFillTwitterCircle } from "react-icons/ai";
@@ -36,6 +37,7 @@ const Hero = () => {
     { name: "Phantom", image: phantom },
     { name: "Trust Wallet", image: trust },
     { name: "WalletConnect", image: wallet },
+    { name: "Ronin Wallet", image: ronin },
     { name: "Safepal", image: safepal },
     { name: "Ledger", image: ledger },
     { name: "Terra", image: terra },
